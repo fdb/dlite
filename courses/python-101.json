@@ -1,0 +1,20 @@
+{
+  "title": "Beginner's Guide to Python",
+  "description": "Initial guide to learning Python.",
+  "chapters": [
+    {
+      "title": "Simple Arithmetic",
+      "sections": [
+        {
+          "type": "exercise",
+          "title": "Adding Numbers",
+          "guide": "## Introduction to Python\nLet's get started with the basics of Python.\n\nTo add two numbers together, use the <code>+</code> sign.\nComplete the code example. The console should print the value <code>8</code>.\n\n### Hint\nYou can put something *inside* of the print statement, e.g. <code>print(5)</code>.",
+          "code": "# Here we initialise the first number to 3.\na = 3\n\n# Here we initialise the second number to 5.\nb = 5\n\n# Complete the print statement to add the two numbers.\nprint()",
+          "expected_code": "print(a + b)",
+          "expected_result": "8",
+          "recap": "Just use the + sign to add two numbers or variables together."
+        }
+      ]
+    }
+  ]
+}

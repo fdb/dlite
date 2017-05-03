@@ -1,0 +1,247 @@
+/**** FONTS ****/
+
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/static/fonts/space-mono-regular.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url(/static/fonts/space-mono-bold.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/static/fonts/work-sans-regular.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url(/static/fonts/work-sans-bold.woff2) format('woff2');
+}
+
+/**** GENERAL STYLES ****/
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+:root {
+  --main-dark: #343;
+  --main-mid: #676;
+  --main-light: #ede;
+  --accent-dark: #CDB380;
+  --accent-light: #E8DDCB;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: #f7f7f7;
+  color: #444;
+  font-family: 'Work Sans', sans-serif;
+  flex: 1;
+  flex-direction: column;
+}
+
+/**** APP ****/
+.app {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+
+/**** HEADER ****/
+
+.header {
+  background: var(--main-dark);
+  color: var(--main-light);
+  font-family: 'Space Mono', monospace;
+  padding: 1rem;
+  display: flex;
+  width: 100%;
+}
+
+.header__logo {
+  flex: 1;
+}
+
+.header__title {
+  flex: 1;
+  text-align: center;
+}
+
+.header__nav {
+  flex: 1;
+  text-align: right;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/**** MAIN ****/
+
+main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+
+/**** GUIDE ****/
+
+.guide {
+  width: 50%;
+  flex: 1;
+  background: white;
+  border-right: 1px solid rgba(0, 0, 0, 0.5);
+  color: var(--main-dark);
+  padding: 0 1rem;
+}
+
+.guide code {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 2px 3px;
+  border-radius: 3px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+}
+
+/**** DOJO ****/
+
+.dojo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/**** DOJO ****/
+
+.editor {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.editor__area {
+  outline: none;
+  font-family: 'Space Mono', monospace;
+  font-variant-ligatures: none;
+  font-size: 0.8rem;
+  background: transparent;
+  color: inherit;
+  flex: 1;
+  border: none;
+  padding: 10px;
+  resize: none;
+}
+
+.editor__actions {
+  padding: 0.5rem 1rem;
+  text-align: right;
+  background: var(--main-light);
+}
+
+.editor__run {
+  border: none;
+  padding: 0.5rem;
+  font-family: 'Work Sans', sans-serif;
+  color: var(--main-light);
+  background: var(--main-mid);
+  border-radius: 5px;
+  outline: none;
+  transition: 0.15s;
+}
+
+.editor__run:hover {
+  background: white;
+  color: black;
+}
+
+.console {
+  flex: 1;
+  overflow-y: auto;
+  font-size: 0.8rem;
+  padding: 10px;
+}
+
+.console__message {
+  white-space: pre;
+  font-family: 'Space Mono', monospace;
+  font-variant-ligatures: none;
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+
+.console__input {
+  display: block;
+  outline: none;
+  font-family: 'Space Mono', monospace;
+  font-variant-ligatures: none;
+  font-size: 0.8rem;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  border: none;
+}
+
+.solved {
+  position: absolute;
+  top: 3.7rem;
+  left: 0.2rem;
+  background: #ded;
+  width: calc(50vw - 0.4rem);
+  bottom: 0.5rem;
+  padding: 10px;
+  color: #343;
+  animation: slide-in 0.3s ease-out;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translate(0, -100px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.solved__recap {
+  padding: 2rem 0;
+}
+
+.solved__next {
+  border: none;
+  padding: 0.5rem 1rem;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--main-light);
+  background: var(--main-mid);
+  border-radius: 5px;
+  outline: none;
+  transition: 0.15s;
+}
