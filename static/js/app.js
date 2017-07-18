@@ -127,7 +127,10 @@ class App extends preact.Component {
     this.state.guideText = this.state.section.guide;
     this.state.editorText = this.state.section.code;
 
-    this.socket = new WebSocket("ws://localhost:3000");
+    const location = window.location;
+    const webSocketUrl = (location.protocol === 'https:' ? 'wss:' : 'ws:') + '//' + location.host;
+    console.log(webSocketUrl);
+    this.socket = new WebSocket(webSocketUrl);
     this.socket.onmessage = this.onSocketMessage.bind(this);
 
   }
